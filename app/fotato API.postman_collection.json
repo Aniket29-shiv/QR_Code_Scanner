@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "fe9f1a93-72ea-4354-9916-13275ef87809",
+		"name": "fotato API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Webstore",
+			"item": [
+				{
+					"name": "fetchstore",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "view_id",
+									"value": "bawarchi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://qr.orsoot.com/api/web/store/fetch",
+							"protocol": "https",
+							"host": [
+								"qr",
+								"orsoot",
+								"com"
+							],
+							"path": [
+								"api",
+								"web",
+								"store",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAllstore",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://qr.orsoot.com/api/web/store/fetchAll",
+							"protocol": "https",
+							"host": [
+								"qr",
+								"orsoot",
+								"com"
+							],
+							"path": [
+								"api",
+								"web",
+								"store",
+								"fetchAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "waitercall",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "store_id",
+									"value": "bawarchi",
+									"type": "text"
+								},
+								{
+									"key": "customer_name",
+									"value": "mohit",
+									"type": "text"
+								},
+								{
+									"key": "table_name",
+									"value": "table-1",
+									"type": "text"
+								},
+								{
+									"key": "customer_phone",
+									"value": "7014557297",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://qr.orsoot.com/api/web/store/waiter/call",
+							"protocol": "https",
+							"host": [
+								"qr",
+								"orsoot",
+								"com"
+							],
+							"path": [
+								"api",
+								"web",
+								"store",
+								"waiter",
+								"call"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createorder",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"store_id\" : \"bawarchi\",\r\n    \"cart\" : [\r\n        {\r\n            \"itemId\" : 3 ,\r\n            \"count\" : 1,\r\n            \"addon\" : null,\r\n            \"extra\" : null\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://qr.orsoot.com/api/web/store/create/order",
+							"protocol": "https",
+							"host": [
+								"qr",
+								"orsoot",
+								"com"
+							],
+							"path": [
+								"api",
+								"web",
+								"store",
+								"create",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchorder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer_phone",
+									"value": "7014557297",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://qr.orsoot.com/api/web/store/account/orders",
+							"protocol": "https",
+							"host": [
+								"qr",
+								"orsoot",
+								"com"
+							],
+							"path": [
+								"api",
+								"web",
+								"store",
+								"account",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "coupon-add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coupon_code",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "view_id",
+									"value": "bawarchi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://qr.orsoot.com/api/web/store/coupon/add",
+							"protocol": "https",
+							"host": [
+								"qr",
+								"orsoot",
+								"com"
+							],
+							"path": [
+								"api",
+								"web",
+								"store",
+								"coupon",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StoreLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "bawarchi@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://qr.orsoot.com/api/login",
+					"protocol": "https",
+					"host": [
+						"qr",
+						"orsoot",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

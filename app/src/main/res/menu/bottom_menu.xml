@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <item-->
+<!--        android:id="@+id/profile"-->
+<!--        android:enabled="true"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:icon="@drawable/ic_baseline_supervisor_account_24"-->
+<!--        android:title="TODO" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/restuarent"-->
+<!--        android:enabled="true"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:icon="@drawable/ic_baseline_food_bank_24"-->
+<!--        android:title="TODO" />-->
+
+    <item
+        android:id="@+id/scan"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:title="TODO"
+        android:icon="@drawable/ic_baseline_qr_code_scanner_24"/>
+<!--    <item-->
+<!--        android:id="@+id/cart"-->
+<!--        android:title="TODO"-->
+<!--        android:enabled="true"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:icon="@drawable/ic_baseline_production_quantity_limits_24"/>-->
+
+</menu>
