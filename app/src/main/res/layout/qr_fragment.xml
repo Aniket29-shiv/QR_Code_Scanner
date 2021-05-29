@@ -52,20 +52,22 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingTop="30dp">
+            android:paddingTop="50dp">
 
             <ImageView
                 android:id="@+id/qr_scanner"
-                android:layout_width="251dp"
-                android:layout_height="230dp"
-                android:layout_marginBottom="300dp"
-                android:layout_marginTop="-40sp"
+                android:layout_width="196dp"
+                android:layout_height="183dp"
+                android:layout_marginTop="-15sp"
+                android:layout_marginBottom="400dp"
                 android:src="@drawable/ic_baseline_qr_code_scanner" />
 
             <com.budiyev.android.codescanner.CodeScannerView
                 android:id="@+id/scanner_view"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_width="215dp"
+                android:layout_height="183dp"
+                android:layout_marginTop="-15sp"
+                android:layout_marginBottom="400dp"
                 android:visibility="gone"
                 app:autoFocusButtonColor="@android:color/white"
                 app:autoFocusButtonVisible="true"
@@ -75,12 +77,19 @@
 
             <Button
                 android:id="@+id/bt_explore"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="-390dp"
                 android:layout_width="293dp"
                 android:layout_height="wrap_content"
                 android:text="Explore"
                 android:background="@color/green"
                 android:textColor="@color/white"/>
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-340dp"/>
 
 
         </LinearLayout>

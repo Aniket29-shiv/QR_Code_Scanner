@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
+        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
 
         switch (item.getItemId()) {
 //            case R.id.profile:
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.scan:
                 fragment = new QRScannerFragment();
+                navigation.setVisibility(View.GONE);
                 break;
 
 //            case R.id.cart:

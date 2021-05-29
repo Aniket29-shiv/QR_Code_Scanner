@@ -1,6 +1,7 @@
 package com.example.slnkchitfunds;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -23,13 +25,16 @@ import androidx.fragment.app.Fragment;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.zxing.Result;
+
+import org.jetbrains.annotations.NotNull;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.CAMERA;
 
-public class QRScannerFragment extends Fragment {
+public class QRScannerFragment extends Fragment  {
     private CodeScanner mCodeScanner;
     ImageView imageView;
     Button explore;
@@ -39,18 +44,20 @@ public class QRScannerFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.qr_fragment,container,false);
+        View view = inflater.inflate(R.layout.qr_fragment, container, false);
 
-        CodeScannerView scannerView =view.findViewById(R.id.scanner_view);
+        CodeScannerView scannerView = view.findViewById(R.id.scanner_view);
 
-        explore=view.findViewById(R.id.bt_explore);
+
+
+        explore = view.findViewById(R.id.bt_explore);
         explore.setVisibility(View.GONE);
 
         webView = view.findViewById(R.id.webView);
         webView.setVisibility(View.GONE);
 
 
-        imageView=view.findViewById(R.id.qr_scanner);
+        imageView = view.findViewById(R.id.qr_scanner);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +90,7 @@ public class QRScannerFragment extends Fragment {
                         });
 
 //                        Toast.makeText(getContext(), result.getText(), Toast.LENGTH_SHORT).show();
-                        System.out.println("This is result "+ result.getText());
+                        System.out.println("This is result " + result.getText());
                     }
                 });
             }
