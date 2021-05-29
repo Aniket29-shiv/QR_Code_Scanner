@@ -37,7 +37,7 @@ import static android.Manifest.permission.CAMERA;
 public class QRScannerFragment extends Fragment  {
     private CodeScanner mCodeScanner;
     ImageView imageView;
-    Button explore;
+    View line_sep;
     WebView webView;
 
 
@@ -50,11 +50,13 @@ public class QRScannerFragment extends Fragment  {
 
 
 
-        explore = view.findViewById(R.id.bt_explore);
-        explore.setVisibility(View.GONE);
+
 
         webView = view.findViewById(R.id.webView);
         webView.setVisibility(View.GONE);
+
+        line_sep = view.findViewById(R.id.line_sep);
+        line_sep.setVisibility(View.GONE);
 
 
         imageView = view.findViewById(R.id.qr_scanner);
@@ -73,21 +75,14 @@ public class QRScannerFragment extends Fragment  {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        explore.setVisibility(View.VISIBLE);
-                        explore.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-//                                Uri uri = Uri.parse(result.getText());
-//                                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-//                                startActivity(intent);
-                                webView.setVisibility(View.VISIBLE);
-                                webView.getSettings().setJavaScriptEnabled(true);
-                                webView.loadUrl(result.getText());
-                                webView.setHorizontalScrollBarEnabled(false);
+                            line_sep.setVisibility(View.VISIBLE);
+                            webView.setVisibility(View.VISIBLE);
+                            webView.getSettings().setJavaScriptEnabled(true);
+                            webView.loadUrl(result.getText());
+                            webView.setHorizontalScrollBarEnabled(false);
 
 
-                            }
-                        });
+
 
 //                        Toast.makeText(getContext(), result.getText(), Toast.LENGTH_SHORT).show();
                         System.out.println("This is result " + result.getText());

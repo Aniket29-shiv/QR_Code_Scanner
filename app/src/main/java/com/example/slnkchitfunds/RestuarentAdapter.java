@@ -9,7 +9,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class RestuarentAdapter  extends BaseAdapter {
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import org.jetbrains.annotations.NotNull;
+
+public class RestuarentAdapter  extends RecyclerView.Adapter<RestuarentAdapter.ViewHolder> {
     Context mContext;
     String[] names;
     String[] address;
@@ -26,38 +31,30 @@ public class RestuarentAdapter  extends BaseAdapter {
         this.images=images;
     }
 
+    @NonNull
+    @NotNull
     @Override
-    public int getCount() {
+    public ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.restuarent_adapter, parent, false);
+
+        return new ViewHolder(view) ;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
+
+    }
+
+    @Override
+    public int getItemCount() {
         return names.length;
     }
 
-    @Override
-    public Object getItem(int position) {
-        return position;
-    }
 
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
+    public class ViewHolder  extends RecyclerView.ViewHolder{
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater=(LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view=inflater.inflate(R.layout.restuarent_adapter,parent,false);
-
-        TextView textname=view.findViewById(R.id.name);
-        TextView textViewAddress=view.findViewById(R.id.address);
-        TextView textrate=view.findViewById(R.id.rate);
-        TextView textBill=view.findViewById(R.id.bill);
-        ImageView imageView=view.findViewById(R.id.image);
-
-        textname.setText(names[position]);
-        textViewAddress.setText(address[position]);
-        textrate.setText(rate[position]);
-        textBill.setText(bill[position]);
-        imageView.setImageResource(images[position]);
-
-        return view;
+        public ViewHolder(@NonNull @NotNull View itemView) {
+            super(itemView);
+        }
     }
 }

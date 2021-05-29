@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -125,7 +126,7 @@ public class RestuarentFragment extends Fragment {
         });
 
         RestuarentAdapter adapter=new RestuarentAdapter(getContext(),names,address,rate,bill,images);
-        listView.setAdapter(adapter);
+        listView.setAdapter((ListAdapter) adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
